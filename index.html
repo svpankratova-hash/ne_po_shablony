@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Случайное фото из облака</title>
+</head>
+<body>
+  <h1>Случайное фото из подборки</h1>
+  <img id="randomPhoto" src="" alt="Фото" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px;" />
+  <br />
+  <button onclick="showRandomPhoto()" style="margin-top: 10px; padding: 8px 12px; font-size: 16px; cursor: pointer;">Показать случайное фото</button>
+
+  <script>
+    // Массив с прямыми ссылками на ваши фотографии из облака mail.ru
+    const photos = [
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0690.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0685.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0667.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0660.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0656.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0650.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0640.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0633.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0618.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0569.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0550.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0547.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0531.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0506.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0497.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0495.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0489.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0484.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0483.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0480.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0462.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0459.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0236.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0226.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0184.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0174.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0140.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0130.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0117.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0114.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0052.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0041.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/DSC_0008.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/20240926_130018(1).jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/20240922_100339.jpg',
+      'https://cloud.mail.ru/public/Awqy/fMZU7tqPF/20240921_112151.jpg'
+    ];
+
+    function showRandomPhoto() {
+      const randomIndex = Math.floor(Math.random() * photos.length);
+      const img = document.getElementById('randomPhoto');
+      img.src = photos[randomIndex];
+      img.alt = `Фото ${randomIndex + 1}`;
+    }
+
+    window.onload = showRandomPhoto;
+  </script>
+</body>
+</html>
