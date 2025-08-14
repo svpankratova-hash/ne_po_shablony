@@ -56,16 +56,15 @@
 
   <script>
     const imageUrls = [
-      "https://i.ibb.co/4Fz0yYr/DSC-0462.jpg",
-      "https://i.ibb.co/MZ1hF7g/20240921-112151.jpg",
-      "https://i.ibb.co/0j0gHdF/DSC-0008.jpg",
-      "https://i.ibb.co/8XqRJQY/IMG-20250506-WA0015.jpg"
+      "https://i.ibb.co/YB3WqgJ1/IMG-20250506-WA0015.jpg",
+      "https://i.ibb.co/PGwZKcLZ/DSC-0008.jpg",
+      "https://i.ibb.co/MrFBGNs/20240921-112151.jpg",
+      "https://i.ibb.co/DHtknQ4F/DSC-0462.jpg"
     ];
 
-    // Проверка наличия изображений
     if (imageUrls.length === 0) {
-      alert("Нет доступных изображений для показа.");
-      throw new Error("imageUrls пуст.");
+      alert("Нет доступных изображений.");
+      throw new Error("Пустой массив imageUrls");
     }
 
     const btn = document.getElementById("get-card-btn");
@@ -73,8 +72,8 @@
 
     // Предзагрузка
     imageUrls.forEach(src => {
-      const preloadImg = new Image();
-      preloadImg.src = src;
+      const preload = new Image();
+      preload.src = src;
     });
 
     btn.addEventListener("click", () => {
