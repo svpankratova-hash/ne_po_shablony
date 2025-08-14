@@ -6,7 +6,7 @@
   <title>Метафорические карты</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f7f7f7;
       padding: 20px;
@@ -55,29 +55,39 @@
   </div>
 
   <script>
-    // Массив с прямыми ссылками на изображения с ImgBB
     const imageUrls = [
       "https://i.ibb.co/4Fz0yYr/DSC-0462.jpg",
       "https://i.ibb.co/MZ1hF7g/20240921-112151.jpg",
       "https://i.ibb.co/0j0gHdF/DSC-0008.jpg",
       "https://i.ibb.co/8XqRJQY/IMG-20250506-WA0015.jpg"
-      // Добавляй сюда новые ссылки с ibb.co, если загрузишь ещё фото
     ];
+
+    // Проверка наличия изображений
+    if (imageUrls.length === 0) {
+      alert("Нет доступных изображений для показа.");
+      throw new Error("imageUrls пуст.");
+    }
 
     const btn = document.getElementById("get-card-btn");
     const img = document.getElementById("card-image");
 
+    // Предзагрузка
+    imageUrls.forEach(src => {
+      const preloadImg = new Image();
+      preloadImg.src = src;
+    });
+
     btn.addEventListener("click", () => {
-      // Случайный выбор изображения
       const randomIndex = Math.floor(Math.random() * imageUrls.length);
       img.src = imageUrls[randomIndex];
-      
-      // Показываем изображение с плавным появлением
+      img.alt = `Метафорическая карта №${randomIndex + 1}`;
+
       img.style.display = "block";
       img.style.opacity = 0;
-      setTimeout(() => {
+
+      requestAnimationFrame(() => {
         img.style.opacity = 1;
-      }, 50);
+      });
     });
   </script>
 </body>
