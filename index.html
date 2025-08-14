@@ -13,6 +13,7 @@
     }
     h1 {
       color: #444;
+      margin-bottom: 20px;
     }
     button {
       margin: 20px;
@@ -54,24 +55,20 @@
   </div>
 
   <script>
-    // Прямые ссылки на изображения с Google Диска (через uc?export=view&id=...)
+    // Массив с прямыми ссылками на изображения с ImgBB
     const imageUrls = [
-      "https://drive.google.com/uc?export=view&id=10urHUlMVtXMe45mdd8wbDiRNOCpcnRs2",
-      "https://drive.google.com/uc?export=view&id=10xO9tkmLstfP14wfuEsqL5q1FmD3QsJ9",
-      "https://drive.google.com/uc?export=view&id=1130ZFyh9bcgl4mZAuA7mN6h-8rY1gMtB",
-      "https://drive.google.com/uc?export=view&id=117KrzQzwoG7FNr327B2-_T1T6CE2Yg5V",
-      "https://drive.google.com/uc?export=view&id=11AGlIbJipm-2Qy4QIhDa5p-HrVQTiHaz",
-      "https://drive.google.com/uc?export=view&id=11CHhmbtBZDnYY3_gPgNCuuNOyu3wY0Sm",
-      "https://drive.google.com/uc?export=view&id=11CU6GSSf9BabyZOsuWiZCF-WBnKsV2Cn",
-      "https://drive.google.com/uc?export=view&id=11D0e0xYOdY9FgaLkTQ33rW3yrU70N-Yh",
-      "https://drive.google.com/uc?export=view&id=11Hn6VqO7lOTk1bqNal548ZdHGYNt7QJq"
+      "https://i.ibb.co/4Fz0yYr/DSC-0462.jpg",
+      "https://i.ibb.co/MZ1hF7g/20240921-112151.jpg",
+      "https://i.ibb.co/0j0gHdF/DSC-0008.jpg",
+      "https://i.ibb.co/8XqRJQY/IMG-20250506-WA0015.jpg"
+      // Добавляй сюда новые ссылки с ibb.co, если загрузишь ещё фото
     ];
 
     const btn = document.getElementById("get-card-btn");
     const img = document.getElementById("card-image");
 
     btn.addEventListener("click", () => {
-      // Случайный выбор
+      // Случайный выбор изображения
       const randomIndex = Math.floor(Math.random() * imageUrls.length);
       img.src = imageUrls[randomIndex];
       
