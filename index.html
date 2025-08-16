@@ -56,10 +56,68 @@
 
   <script>
     const imageUrls = [
-      "https://i.ibb.co/YB3WqgJ1/IMG-20250506-WA0015.jpg",
-      "https://i.ibb.co/PGwZKcLZ/DSC-0008.jpg",
-      "https://i.ibb.co/MrFBGNs/20240921-112151.jpg",
-      "https://i.ibb.co/DHtknQ4F/DSC-0462.jpg"
+      "https://i.ibb.co/W4kGKkF3/DSC-0052.jpg",
+      "https://i.ibb.co/nMDP71YJ/IMG-20250506-WA0015.jpg",
+      "https://i.ibb.co/f5wT7rt/20240926-130018-1.jpg",
+      "https://i.ibb.co/ZRjX3mvZ/20240921-112151.png",
+      "https://i.ibb.co/tM7PZCy7/20250815-073442.jpg",
+      "https://i.ibb.co/b58zt4j2/20240922-100339.png",
+      "https://i.ibb.co/ycvmM7VB/DSC-0008.jpg",
+      "https://i.ibb.co/0RvJkKbh/DSC-0226.jpg",
+      "https://i.ibb.co/BHtnSP0d/DSC-0764.jpg",
+      "https://i.ibb.co/vCnS4cDF/DSC-0667.jpg",
+      "https://i.ibb.co/ccf81FQz/DSC-0480.jpg",
+      "https://i.ibb.co/sptJshRy/DSC-0618.jpg",
+      "https://i.ibb.co/MkbL2JSB/DSC-0751.jpg",
+      "https://i.ibb.co/JjWpyZMf/DSC-0190.jpg",
+      "https://i.ibb.co/4ZmHXGYQ/DSC-0710.jpg",
+      "https://i.ibb.co/Y7qtn0R5/DSC-0631.jpg",
+      "https://i.ibb.co/CNp5L9B/DSC-0581.jpg",
+      "https://i.ibb.co/cctDLQgL/DSC-0483.jpg",
+      "https://i.ibb.co/WpgYNyfY/DSC-0755.jpg",
+      "https://i.ibb.co/bgF4z6Jg/DSC-0184.jpg",
+      "https://i.ibb.co/4nBcNvSb/DSC-0497.jpg",
+      "https://i.ibb.co/hRpBRGgv/DSC-0236.jpg",
+      "https://i.ibb.co/HfZmc6ng/DSC-0515.jpg",
+      "https://i.ibb.co/1JT8F1ZC/DSC-0489.jpg",
+      "https://i.ibb.co/zTcJx7jN/DSC-0506.jpg",
+      "https://i.ibb.co/4B4fPVw/DSC-0662.jpg",
+      "https://i.ibb.co/hR5KkQ4B/DSC-0706.jpg",
+      "https://i.ibb.co/gL0P4NrB/DSC-0600.jpg",
+      "https://i.ibb.co/QvX24r7k/DSC-0462.jpg",
+      "https://i.ibb.co/jZR5vRsy/DSC-0196.jpg",
+      "https://i.ibb.co/RTS9hNbg/DSC-0685.jpg",
+      "https://i.ibb.co/CK82cx0R/DSC-0547.jpg",
+      "https://i.ibb.co/GvRFJtnN/DSC-0656.jpg",
+      "https://i.ibb.co/3mSM0t4P/DSC-0459.jpg",
+      "https://i.ibb.co/1fQ6n5mp/DSC-0743.jpg",
+      "https://i.ibb.co/Lzs6YrMs/DSC-0531.jpg",
+      "https://i.ibb.co/ksqj2QVR/DSC-0502.jpg",
+      "https://i.ibb.co/fVJNYVMK/DSC-0609.jpg",
+      "https://i.ibb.co/ZRhS5qXJ/DSC-0716-1.jpg",
+      "https://i.ibb.co/TMJ3Mc70/DSC-0484.jpg",
+      "https://i.ibb.co/39Dk69Fp/DSC-0754.jpg",
+      "https://i.ibb.co/vxncfT0Y/DSC-0735.jpg",
+      "https://i.ibb.co/pBSKb3sN/DSC-0640.jpg",
+      "https://i.ibb.co/wnKbRs0/DSC-0041.jpg",
+      "https://i.ibb.co/h11mNttw/DSC-0174.jpg",
+      "https://i.ibb.co/pj9XK0tG/DSC-0114.jpg",
+      "https://i.ibb.co/XZHN4RkS/DSC-0156.jpg",
+      "https://i.ibb.co/KpP855jt/DSC-0713.jpg",
+      "https://i.ibb.co/b5J77nyh/DSC-0690.jpg",
+      "https://i.ibb.co/NdX9Gmtw/DSC-0592.jpg",
+      "https://i.ibb.co/PZS4pm7d/DSC-0650.jpg",
+      "https://i.ibb.co/WNGY1Bqy/DSC-0746.jpg",
+      "https://i.ibb.co/TDHdXBQc/DSC-0765.jpg",
+      "https://i.ibb.co/GQD0hhKR/DSC-0495.jpg",
+      "https://i.ibb.co/6J7yBQ5p/DSC-0660.jpg",
+      "https://i.ibb.co/bR2Z0959/DSC-0749.jpg",
+      "https://i.ibb.co/TMbY9KTD/DSC-0181.jpg",
+      "https://i.ibb.co/7NXf5mTj/DSC-0140.jpg",
+      "https://i.ibb.co/2HJPMx1/DSC-0205.jpg",
+      "https://i.ibb.co/nNTx4mDy/DSC-0569.jpg",
+      "https://i.ibb.co/bgvhPTfn/DSC-0215.jpg",
+      "https://i.ibb.co/tMLFVyTk/DSC-0633.jpg"
     ];
 
     if (imageUrls.length === 0) {
@@ -70,10 +128,9 @@
     const btn = document.getElementById("get-card-btn");
     const img = document.getElementById("card-image");
 
-    // Предзагрузка
+    // Предзагрузка изображений
     imageUrls.forEach(src => {
-      const preload = new Image();
-      preload.src = src;
+      new Image().src = src;
     });
 
     btn.addEventListener("click", () => {
