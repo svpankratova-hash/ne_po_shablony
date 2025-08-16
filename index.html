@@ -44,6 +44,25 @@
       opacity: 0;
       transition: opacity 0.5s;
     }
+    #card-text, #card-footer {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    #card-footer {
+      font-size: 16px;
+      color: #555;
+    }
+    #card-footer a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #card-footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -52,6 +71,12 @@
 
   <div id="card-container">
     <img id="card-image" alt="Метафорическая карта" />
+    <div id="card-text"></div>
+    <div id="card-footer">
+      Метафорические ассоциативные фотокарты «Не по шаблону»<br>
+      От Светланы Панкратовой<br>
+      Для связи переходи в телеграм <a href="https://t.me/distant_vision" target="_blank">https://t.me/distant_vision</a>
+    </div>
   </div>
 
   <script>
@@ -120,15 +145,20 @@
       "https://i.ibb.co/tMLFVyTk/DSC-0633.jpg"
     ];
 
-    if (imageUrls.length === 0) {
-      alert("Нет доступных изображений.");
-      throw new Error("Пустой массив imageUrls");
-    }
+    const texts = [
+      "Посмотри на карту и задай себе вопрос: что это значит для меня?",
+      "Обрати внимание на первую мысль, которая пришла в голову.",
+      "Эта карта может быть подсказкой на сегодняшний день.",
+      "Какие эмоции вызывает у тебя это изображение?",
+      "Что важного ты можешь вынести из этой карты?"
+    ];
 
     const btn = document.getElementById("get-card-btn");
     const img = document.getElementById("card-image");
+    const textBlock = document.getElementById("card-text");
+    const footer = document.getElementById("card-footer");
 
-    // Предзагрузка изображений
+    // Предзагрузка картинок
     imageUrls.forEach(src => {
       new Image().src = src;
     });
@@ -140,10 +170,20 @@
 
       img.style.display = "block";
       img.style.opacity = 0;
+      textBlock.style.opacity = 0;
+      footer.style.opacity = 0;
 
       requestAnimationFrame(() => {
         img.style.opacity = 1;
       });
+
+      // Выбираем случайный текст
+      const randomText = texts[Math.floor(Math.random() * texts.length)];
+      textBlock.textContent = randomText;
+      setTimeout(() => {
+        textBlock.style.opacity = 1;
+        footer.style.opacity = 1;
+      }, 300);
     });
   </script>
 </body>
